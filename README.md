@@ -11,5 +11,5 @@
 - 학습하거나 고민한 내용들을 코드나 주석을 통해 표현한다.
 
 ## 학습 주제
-- [Java](src/test/java)
-  - [동일성과 동등성](src/test/java/identityandequality)
+- [Java](src/test/java/java)
+  - [동일성과 동등성](src/test/java/java/identityandequality)

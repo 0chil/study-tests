@@ -1,4 +1,4 @@
-package java.identityandequality.materials;
+package javastudy.identityandequality.materials;
 
 import java.util.Objects;
 

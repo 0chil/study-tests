@@ -1,15 +1,15 @@
-package java.identityandequality;
+package javastudy.identityandequality;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatIllegalArgumentException;
 import static org.assertj.core.api.Assertions.assertThatNoException;
 
-import java.identityandequality.materials.FieldCompareProduct;
+import javastudy.identityandequality.materials.FieldCompareProduct;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import java.identityandequality.materials.Box;
-import java.identityandequality.materials.IdCompareProduct;
-import java.identityandequality.materials.NoDuplicateBox;
+import javastudy.identityandequality.materials.Box;
+import javastudy.identityandequality.materials.IdCompareProduct;
+import javastudy.identityandequality.materials.NoDuplicateBox;
 
 @DisplayName("동등성에 관련한 비즈니스 룰이 바뀌었을 때, 어떻게 반영하는가?")
 // 객체지향 세계에서 반영해도 괜찮은가? 이 행위가 데이터 자체에 영향을 미치지는 않는가?

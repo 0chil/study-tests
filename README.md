@@ -14,6 +14,8 @@
 - [Java](src/test/java/java)
   - [동일성과 동등성의 변화에 대응하기](src/test/java/javastudy/identityandequality/NewEqualityRequirementTest.java)
   - [Thread Pool](src/test/java/javastudy/thread/ThreadPoolStudyTest.java)
+  - - [메모리 가시성?](src/test/java/javastudy/memory_visibility/MemoryVisibilityStudyTest.java)
+  - [일반 변수 vs volatile](src/test/java/javastudy/memory_visibility/VolatileStudyTest.java)
 - [JPA](src/test/java/jpa)
   - [엔티티, 1차캐시](src/test/java/jpa/EntityAndFirstLevelCacheTest.java)
   - [트랜잭션](src/test/java/jpa/TransactionStudyTest.java)

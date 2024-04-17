@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -91,6 +93,35 @@ public class ThreadPoolStudyTest {
         pool.awaitTermination(5L, TimeUnit.SECONDS);
 
         assertThat(threadIds).hasSize(5);
+    }
+
+    @Test
+    void 싱글_쓰레디드_쓰레드풀은_작업을_순차적으로_실행한다() throws InterruptedException {
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        executorService.submit(() -> {
+            System.out.println("started");
+            sleepUnsafely(500);
+            System.out.println("ended");
+        });
+        executorService.submit(() -> {
+            System.out.println("started");
+            sleepUnsafely(500);
+            System.out.println("ended");
+        });
+        executorService.awaitTermination(5, TimeUnit.SECONDS);
+    }
+
+    @Test
+    void 쓰레드풀은_같은_task를_여러번_주어도_괜찮다() throws InterruptedException {
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        Runnable task = () -> {
+            System.out.println(Thread.currentThread().getId() + "started");
+            sleepUnsafely(500);
+            System.out.println(Thread.currentThread().getId() + "ended");
+        };
+        executorService.submit(task);
+        executorService.submit(task);
+        executorService.awaitTermination(5, TimeUnit.SECONDS);
     }
 
     private void watch(ThreadPoolExecutor pool) throws InterruptedException {
